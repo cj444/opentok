@@ -1,5 +1,5 @@
 <?php
-
+echo "hi";
 $autoloader = __DIR__.'/../vendor/autoload.php';
 
 if(!file_exists($autoloader)) {
