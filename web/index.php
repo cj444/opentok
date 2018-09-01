@@ -1,5 +1,8 @@
 <?php
-echo "hi";
+/* 
+/session not working
+
+common code  */
 $autoloader = __DIR__.'/../vendor/autoload.php';
 
 if(!file_exists($autoloader)) {
