@@ -43,6 +43,7 @@ font-size: 16px;}
 }
 
 function initializeSession() {
+alert(apiKey);
   var session = OT.initSession(apiKey, sessionId);
 
   // Subscribe to a newly created stream
