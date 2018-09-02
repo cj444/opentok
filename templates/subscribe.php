@@ -50,8 +50,7 @@ function initializeSession(channel) {
 
   var session = OT.initSession(apiKey, sessionId);
  
-    session.connect(token, function(error) { 
-    });
+ 
   // Subscribe to a newly created stream
      session.on('streamCreated', function(event) {
 		   console.log("New stream in the session: " + event.stream.streamId);
@@ -65,7 +64,8 @@ function initializeSession(channel) {
 session.on("streamDestroyed", function (event) {
   console.log("Stream stopped. Reason: " + event.reason);
 });
- 
+    session.connect(token, function(error) { 
+    });
 
 }
 </script>
