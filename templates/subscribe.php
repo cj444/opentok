@@ -14,11 +14,11 @@ font-size: 16px;}
 </style>
 
     <div id="videos">
-	     <div style="width:40%;">
+	     <div style="width:40%;float:left;">
 		    <p>http://chetanphp.herokuapp.com/room/test</p>
             <div id="test"></div> 
 		 </div>
-		   <div style="width:40%;">
+		   <div style="width:40%;float:left;">
 				<p>http://chetanphp.herokuapp.com/room/test1</p>
 				<div id="test1"></div> 
 		   </div>
@@ -57,7 +57,7 @@ function initializeSession(channel) {
    session.subscribe(event.stream, channel, {
     insertMode: 'append',
     width: '100%',
-    height: '100%'
+    height: '50%'
   }, handleError); 
 }); 
 session.on("streamDestroyed", function (event) {
