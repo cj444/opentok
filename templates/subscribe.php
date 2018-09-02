@@ -67,8 +67,7 @@ session.on("streamDestroyed", function (event) {
   console.log("Stream stopped. Reason: " + event.reason);
 });
    
-  session.connect(token, function(error) { 
-    });
+  
 }
 </script>
    
