@@ -41,9 +41,6 @@ function initializeSession() {
 });
    */
   
-  
-  
-
   // Create a publisher
   var publisher = OT.initPublisher('publisher', {
     insertMode: 'append',
@@ -58,7 +55,8 @@ function initializeSession() {
       handleError(error);
     } else {
       session.publish(publisher, handleError);
-	  document.getElementById("videos").style.color = "red";
+	  document.getElementById("videos").style.display = "block";
+	  document.getElementById("login").style.display = "none";
     }
   });
 }
