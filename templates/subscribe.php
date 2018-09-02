@@ -45,7 +45,7 @@ font-size: 16px;}
 function initializeSession() {
 alert(apiKey);
   var session = OT.initSession(apiKey, sessionId);
-
+alert(session);
   // Subscribe to a newly created stream
   
    session.on('streamCreated', function(event) {
