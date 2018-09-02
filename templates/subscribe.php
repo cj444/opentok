@@ -28,6 +28,7 @@ font-size: 16px;}
 	  
 	  
 	    myFunction('test');
+	    myFunction('test1');
     function myFunction(channel) { 
          	fetch(SERVER_BASE_URL + '/room/'+channel).then(function(res) {
 			  return res.json()
@@ -55,8 +56,8 @@ function initializeSession(channel) {
    //alert(event.stream.streamId);
    session.subscribe(event.stream, channel, {
     insertMode: 'append',
-    width: '20%',
-    height: '20%'
+    width: '100%',
+    height: '100%'
   }, handleError); 
 }); 
 session.on("streamDestroyed", function (event) {
