@@ -6,15 +6,20 @@ var token = "YOUR_TOKEN";
 // (optional) add server code here
 // (optional) add server code here
     var SERVER_BASE_URL = 'https://chetanphp.herokuapp.com';
-    fetch(SERVER_BASE_URL + '/room/'+channel).then(function(res) {
-      return res.json()
-    }).then(function(res) {
-      apiKey = res.apiKey;
-      sessionId = res.sessionId;
-      token = res.token;
-      initializeSession();
-    }).catch(handleError);
-
+	  var buttongo = document.getElementById("go");
+	  
+	      buttongo.onclick = myFunction;
+    function myFunction() { 
+           var channel = document.getElementById("roomname").value;	
+      		fetch(SERVER_BASE_URL + '/room/'+channel).then(function(res) {
+			  return res.json()
+			}).then(function(res) {
+			  apiKey = res.apiKey;
+			  sessionId = res.sessionId;
+			  token = res.token;
+			  initializeSession();
+			}).catch(handleError);
+   }
 // Handling all of our errors here by alerting them
 function handleError(error) {
   if (error) {
@@ -27,14 +32,14 @@ function initializeSession() {
 
   // Subscribe to a newly created stream
   
-  session.on('streamCreated', function(event) {
+/*   session.on('streamCreated', function(event) {
   session.subscribe(event.stream, 'subscriber', {
     insertMode: 'append',
     width: '100%',
     height: '100%'
   }, handleError);
 });
-  
+   */
   
   
   
@@ -53,6 +58,7 @@ function initializeSession() {
       handleError(error);
     } else {
       session.publish(publisher, handleError);
+	  document.getElementById("videos").style.color = "red";
     }
   });
 }
