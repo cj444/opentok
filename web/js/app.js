@@ -6,7 +6,7 @@ var token = "YOUR_TOKEN";
 // (optional) add server code here
 // (optional) add server code here
     var SERVER_BASE_URL = 'https://chetanphp.herokuapp.com';
-    fetch(SERVER_BASE_URL + '/session').then(function(res) {
+    fetch(SERVER_BASE_URL + '/room/'+channel).then(function(res) {
       return res.json()
     }).then(function(res) {
       apiKey = res.apiKey;
