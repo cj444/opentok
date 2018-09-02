@@ -35,7 +35,7 @@ font-size: 16px;}
 			  apiKey = res.apiKey;
 			  sessionId = res.sessionId;
 			  token = res.token;
-			  initializeSession();
+			  initializeSession(channel);
 			}).catch(handleError);
    }
    
@@ -45,7 +45,7 @@ font-size: 16px;}
   }
 }
 
-function initializeSession() {
+function initializeSession(channel) {
 
   var session = OT.initSession(apiKey, sessionId);
 
