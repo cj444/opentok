@@ -5,8 +5,15 @@
     <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 </head>
 <body>
-<div id="login" style="width:50%;align:center;">
-<input type="text" id="roomname" style="width:70%;height:80px;"placeholder="Please Enter Room Name to publish a stream." >
+<style>
+#go{background-color: green;
+border: solid;
+padding: 6px;
+width: 10%;
+font-size: 16px;}
+</style>
+<div id="login" style="width:100%;text-align:center;">
+<input type="text" id="roomname" style="width:20%;height:46px;"placeholder="Please Enter Room Name to publish a stream." >
 <button id="go" >Go</button>
 </div>
     <div id="videos" style="display:none;">
