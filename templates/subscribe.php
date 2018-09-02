@@ -48,13 +48,8 @@ function initializeSession() {
 
   // Subscribe to a newly created stream
   
-   session.on('streamCreated', function(event) {
-   alert(event.stream.streamId);
-  session.subscribe(event.stream, 'subscriber', {
-    insertMode: 'append',
-    width: '100%',
-    height: '100%'
-  }, handleError);
+session.on("streamDestroyed", function (event) {
+  console.log("Stream stopped. Reason: " + event.reason);
 });
  
   session.connect(token, function(error) { 
