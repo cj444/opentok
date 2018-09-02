@@ -19,46 +19,7 @@ font-size: 16px;}
     <div id="videos">
          <div id="subscriber"></div> 
     </div>
-    <script>
-	    var SERVER_BASE_URL = 'https://chetanphp.herokuapp.com';
-	    var buttongo = document.getElementById("go");
-	  
-	      buttongo.onclick = myFunction;
-    function myFunction() { 
-           var channel = document.getElementById("roomname").value;	
-      		fetch(SERVER_BASE_URL + '/room/'+channel).then(function(res) {
-			  return res.json()
-			}).then(function(res) {
-			  apiKey = res.apiKey;
-			  sessionId = res.sessionId;
-			  token = res.token;
-			  initializeSession();
-			}).catch(handleError);
-   }
-   
-   function handleError(error) {
-  if (error) {
-    alert(error.message);
-  }
-}
 
-function initializeSession() {
-alert(apiKey);
-  var session = OT.initSession(apiKey, sessionId);
-alert(session);
-  // Subscribe to a newly created stream
-  
-   session.on('streamCreated', function(event) {
-  session.subscribe(event.stream, 'subscriber', {
-    insertMode: 'append',
-    width: '100%',
-    height: '100%'
-  }, handleError);
-});
-  
-
-}
-</script>
-   
+    <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
