@@ -50,6 +50,22 @@ function initializeSession(channel) {
 
   var session = OT.initSession(apiKey, sessionId);
 
+  var connectionCount;
+session.on({
+  connectionCreated: function (event) {
+       console.log("existing stream in the session: " + event.stream.streamId);
+    connectionCount++;
+    if (event.connection.connectionId != session.connection.connectionId) {
+      console.log('Another client connected. ' + connectionCount + ' total.');
+    }
+  },
+  connectionDestroyed: function connectionDestroyedHandler(event) {
+    connectionCount--;
+    console.log('A client disconnected. ' + connectionCount + ' total.');
+  }
+});
+  
+  
   // Subscribe to a newly created stream
      session.on('streamCreated', function(event) {
    console.log("New stream in the session: " + event.stream.streamId);
