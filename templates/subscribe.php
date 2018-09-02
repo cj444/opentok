@@ -14,7 +14,14 @@ font-size: 16px;}
 </style>
 
     <div id="videos">
-         <div id="subscriber"></div> 
+	     <div style="width:40%;">
+		    <p>http://chetanphp.herokuapp.com/room/test</p>
+            <div id="test"></div> 
+		 </div>
+		   <div style="width:40%;">
+				<p>http://chetanphp.herokuapp.com/room/test1</p>
+				<div id="test1"></div> 
+		   </div>
     </div>
     <script>
 	    var SERVER_BASE_URL = 'https://chetanphp.herokuapp.com';
@@ -46,7 +53,7 @@ function initializeSession() {
      session.on('streamCreated', function(event) {
    console.log("New stream in the session: " + event.stream.streamId);
    //alert(event.stream.streamId);
-   session.subscribe(event.stream, 'subscriber', {
+   session.subscribe(event.stream, channel, {
     insertMode: 'append',
     width: '20%',
     height: '20%'
