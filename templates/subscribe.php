@@ -40,16 +40,18 @@ font-size: 16px;}
 			}).catch(handleError);
    }
    
-   function handleError(error) {
-  if (error) {
-    alert(error.message);
-  }
-}
+    function handleError(error) {
+	  if (error) {
+		alert(error.message);
+	  }
+	}
 
 function initializeSession(channel) {
 
-  var session = OT.initSession(apiKey, sessionId);
- 
+    var session = OT.initSession(apiKey, sessionId);
+  
+    session.connect(token, function(error) { 
+    });
  
   // Subscribe to a newly created stream
      session.on('streamCreated', function(event) {
@@ -64,9 +66,9 @@ function initializeSession(channel) {
 session.on("streamDestroyed", function (event) {
   console.log("Stream stopped. Reason: " + event.reason);
 });
-    session.connect(token, function(error) { 
+   
+  session.connect(token, function(error) { 
     });
-
 }
 </script>
    
