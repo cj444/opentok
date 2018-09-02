@@ -5,8 +5,11 @@
     <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 </head>
 <body>
-
-    <div id="videos">
+<div id="login">
+<input type="text" id="roomname" placeholder="Please Enter Room Name to publish a stream." >
+<button id="go" >Go</button>
+</div>
+    <div id="videos" style="display;none;">
         <!-- <div id="subscriber"></div> -->
         <div id="publisher"></div>
     </div>
