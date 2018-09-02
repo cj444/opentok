@@ -34,7 +34,7 @@ function initializeSession() {
   
    session.on('streamCreated', function(event) {
    console.log("New stream in the session: " + event.stream.streamId);
-   alert(event.stream.streamId);
+   //alert(event.stream.streamId);
 /*   session.subscribe(event.stream, 'subscriber', {
     insertMode: 'append',
     width: '100%',
